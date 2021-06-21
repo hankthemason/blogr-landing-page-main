@@ -220,21 +220,35 @@ nav .text .left {
 
 .editor-container {
   margin-top: 5rem;
-  background-image: url(images/illustration-editor-desktop.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 156% 0;
   color: #223a4f;
-  height: 48rem;
-  
+  height: 55rem;
+  overflow: hidden;
+  position: relative;
 }
 
-.editor-container {
-  text-align: center;
+.descriptions {
+  float: left;
+  width: 45%;
+}
+
+#img-container {
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+  left: 65%;
+  overflow-x: hidden;
+}
+
+#img-container img {
+  width: 50%;
 }
 
 .editor-container h2 {
+  text-align: center;
+  display: block;
   padding-top: 5rem;
+  width: 30rem;
+  margin: 0 auto;
 }
 
 .editor-container .descriptions {
@@ -242,7 +256,7 @@ nav .text .left {
   text-align: left;
   margin-top: 5rem;
   line-height: 1.5rem;
-  padding: 0 6rem;
+  padding: 0 3rem 0 6rem;
 }
 
 .editor-container .descriptions p {
@@ -434,6 +448,41 @@ nav .text .left {
     padding: 1.5rem 0rem;
     font-size: 1.6rem;
   }
+
+  /*editor section*/
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: auto;
+}
+
+  .editor-container h2 {
+    order: 1;
+    text-align: center;
+  }
+
+  #img-container {
+    margin-top: 3.5rem;
+    position: static;
+    display: block;
+    order: 2;
+    width: 100%;
+    object-fit: cover;
+    overflow-x: visible;
+  }
+
+  
+
+  .editor-container .descriptions {
+    order: 3;
+    text-align: center;
+    width: 100%;
+    padding: 0 3rem;
+  }
+
+
+  
 
 
 

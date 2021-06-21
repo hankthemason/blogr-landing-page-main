@@ -59,6 +59,10 @@ h5 {
   width: 100%;
 }
 
+.header .text {
+  font-weight: 200;
+}
+
 nav .text {
   display: flex;
   justify-content: space-between;
@@ -83,24 +87,46 @@ nav .text .left {
   transition: .5s;
 }
 
-.header span:hover img {
+.header div:hover > img {
   transform: rotate(-180deg);
   transition: .5s;
 }
 
-.header .text .nav-link .dropdown {
+/* .header .text .nav-link .dropdown {
   display: none;
   transition: .5s;
   z-index: 10;
 }
 
-.header  .text .nav-link span:hover + .dropdown {
+.nav-link .menu-item:hover + .dropdown, .dropdown:hover {
   display: block;
+  position: absolute;
+  z-index: 100;
+  margin-top: .2rem;
+  margin-left: -2rem;
+  background: hsl(0, 0%, 100%);
+  padding: 1.5rem;
+  text-align: left;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.4);
+} */
+
+.dropdown {
+  display: none;
 }
 
-.header .text .nav-link .dropdown {
+.header .left .nav-link {
+  display: inline-block;
+  /* This prevents the tiny gap the mouse will hit moving from the link to the dropdown */
+  padding-bottom: .2rem;
+}
+
+.nav-link:hover .dropdown {
+  display: block;
   position: absolute;
-  margin-top: .2rem;
+  z-index: 100;
+  /* this should fall within the .nav-link padding */
+  margin-top: 0;
   margin-left: -2rem;
   background: hsl(0, 0%, 100%);
   padding: 1.5rem;
@@ -114,18 +140,27 @@ nav .text .left {
   transition: .5s;
   cursor: pointer;
   text-decoration: none;
-} 
+}
+
+.header .text .dropdown li a:hover{
+  color: hsl(240, 0%, 56%);
+  transition: .5s;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 
 .header .left {
-  margin-left: 5rem;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.header .left div {
+  padding: 0 .4rem;
 }
 
 .header .right {
   margin-right: 10%;
-}
-
-.text span {
-  margin: 0 .75rem;
 }
 
 .text img {
@@ -137,6 +172,13 @@ nav .text .left {
   background-color: white;
   border-radius: 20px;
   padding: 7px 20px;
+  margin-left: 9px;
+}
+
+#sign-up:hover {
+  color: white;
+  background-color:hsl(13, 100%, 72%);
+  cursor: pointer;
 }
 
 .banner {
@@ -174,8 +216,20 @@ nav .text .left {
   background-color: white;
 }
 
+#white-btn:hover {
+  cursor: pointer;
+  color: white;
+  background-color:hsl(13, 100%, 72%);
+}
+
 #transparent-btn {
   border: 1px solid white;
+}
+
+#transparent-btn:hover {
+  background: white;
+  color: hsl(13, 100%, 72%);
+  cursor: pointer;
 }
 
 #mobile-menu {
@@ -285,13 +339,13 @@ nav .text .left {
   position: relative;
 }
 
-.left {
+.infrastructure .left {
   position: relative;
   top: -1rem;
   width: 40%;
 }
 
-.left img {
+.infrastructure .left img {
   max-width: 135%;
 }
 
@@ -309,7 +363,7 @@ nav .text .left {
   border-bottom-left-radius: 100px;
 }
 
-.right {
+.infrastructure .right {
   width: 60%;
   color: white;
   position: relative;
@@ -320,21 +374,21 @@ nav .text .left {
   justify-content: center;
 }
 
-.right .text {
+.infrastructure .right .text {
   padding-left: 2rem;
   font-weight: normal;
   line-height: 1.6rem;
   padding-right: 2rem;
 }
 
-.right .text h2 {
+.infrastructure .right .text h2 {
   font-weight: normal;
   margin: 2rem 0;
   line-height: 2rem;
   font-size: 2.1rem;
 }
 
-.right .text p {
+.infrastructure .right .text p {
   font-weight: 100;
   font-size: 14px;
 }
@@ -361,12 +415,19 @@ nav .text .left {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  padding: 0 4rem;
+  padding: 6rem 4rem 0 4rem;
+  line-height: 1.4rem;
 }
 
 .laptop h4 {
   color: #334250;
   margin: 2rem 0;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.laptop #laptop-mobile {
+  display: none;
 }
 
 /* footer section */
@@ -379,6 +440,7 @@ nav .text .left {
   color: white;
   display: flex;
   justify-content: space-around;
+  border-top-right-radius: 100px;
 }
 
 .footer .child {
@@ -418,7 +480,8 @@ nav .text .left {
   }
 
   .banner {
-    padding: 0rem 2rem;
+    padding: 3rem 2rem;
+    top: 15%;
   }
 
   .banner h1{
@@ -524,12 +587,52 @@ nav .text .left {
     padding-left: 0;
     order: 2;
     text-align: center;
-    /* top: -4rem; */
+    top: -5rem; 
   }
 
-  .right .text h2 {
+  .infrastructure .right .text h2 {
     font-size: 2.7rem;
     line-height: 3rem;
+  }
+
+  /* laptop section */
+
+  .laptop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .laptop .image {
+    order: 1;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .laptop .image img {
+    max-width: 80%;
+    height: auto;
+    margin-left: 19rem;
+  } 
+
+  .laptop .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+    text-align: center;
+    padding-top: 0;
+  }
+
+  .laptop #laptop-desktop {
+    display: none;
+  }
+
+  .laptop #laptop-mobile {
+    display: unset;
   }
 
 }
@@ -545,7 +648,7 @@ nav .text .left {
     left: -20%;
   }
 
-  .left img {
+  .infrastructure .left img {
     max-width: 200%;
   }
 
@@ -554,17 +657,38 @@ nav .text .left {
     width: 100%;
   }
 
-  .right .text {
+  .infrastructure .right .text {
     padding: 0;
   }
 
-  .right .text h2 {
+  .infrastructure .right .text h2 {
     font-size: 2.2rem;
     line-height: 3rem;
   } 
 
-  .right .text p {
+  .infrastructure .right .text p {
     padding: 0 1rem;
+  }
+
+  /* footer */
+  .footer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .child:first-child {
+    margin-top: 2rem;
+  }
+
+  .footer .child {
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .footer .child:last-child {
+    margin-bottom: 2rem;
   }
 }
 

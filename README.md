@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://github.com/hankthemason/blogr-landing-page-main)
-- Live Site URL: [](https://hankthemason.github.io/blogr-landing-page-main/)
+- Solution URL: [https://github.com/hankthemason/blogr-landing-page-main](https://github.com/hankthemason/blogr-landing-page-main)
+- Live Site URL: [https://hankthemason.github.io/blogr-landing-page-main](https://hankthemason.github.io/blogr-landing-page-main/)
 
 ## My process
 

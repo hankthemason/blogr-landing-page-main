@@ -285,6 +285,10 @@ nav .text .left {
   position: relative;
 }
 
+.editor-container h2 {
+  max-width: 100%;
+}
+
 .descriptions {
   float: left;
   width: 45%;
@@ -638,6 +642,10 @@ nav .text .left {
 }
 
 @media only screen and (max-width: 500px) {
+
+  .editor-container h2 {
+    font-size: 1.7rem;
+  }
 
   .bckgrnd {
     top: 0;
